@@ -1,4 +1,4 @@
-name: Windows - H2S - CM - 720 - Direct - Dual - Server 1
+name: Windows - H2S - CM - 720 - Dual - 1
 
 on:
   workflow_dispatch:
