@@ -13,4 +13,4 @@ jobs:
         shell: pwsh
         run: |
           pip install chardet
-          pip install git+https://github.com/monsterhunters/srtmerge.git
+          pip install git+https://github.com/monsterhunters/srtmerge.git --no-build-isolation
