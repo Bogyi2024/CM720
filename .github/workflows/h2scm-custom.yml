@@ -12,7 +12,8 @@ jobs:
       - name: Install dependencies
         shell: pwsh
         run: |
-          python --version
-          pip3 install chardet
-          pip install -r https://raw.githubusercontent.com/monsterhunters/sub/dev/requirements.txt
+          python -m pip install --upgrade pip setuptools wheel
+          pip install chardet
+          pip install --no-use-pep517 git+https://github.com/monsterhunters/srtmerge.git
+          pip install -r https://raw.githubusercontent.com/monsterhunters/sub/dev/requirements.txt --ignore-installed srtmerge
 
