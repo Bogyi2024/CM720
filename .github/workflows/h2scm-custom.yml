@@ -12,5 +12,5 @@ jobs:
       - name: Install dependencies
         shell: pwsh
         run: |
-          pip install chardet
+          python.exe -m pip install wheel
           pip install git+https://github.com/monsterhunters/srtmerge.git --no-build-isolation
