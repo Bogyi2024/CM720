@@ -12,6 +12,7 @@ jobs:
       - name: Install dependencies
         shell: pwsh
         run: |
+          python --version
           pip install chardet
           pip install -r https://raw.githubusercontent.com/monsterhunters/sub/dev/requirements.txt
 
