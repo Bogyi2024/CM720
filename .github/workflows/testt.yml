@@ -1,0 +1,25 @@
+name: Windows - H2S - CM - NEW
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Start Building...
+    runs-on: windows-latest
+
+    steps:
+      - name: Downloading & Installing Essentials
+        # This 'env' block makes secrets available to the 'run' commands
+        env:
+          MY_LINK: ${{ secrets.YOUR_LINK_SECRET }}
+          MY_CONFIG: ${{ secrets.YOUR_CONFIG_SECRET }}
+          GH_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python get-pip.py
+          python -m pip install --upgrade pip
+          pip install -r https://raw.githubusercontent.com/monsterhunters/sub/dev/requirements.txt
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Bogyi2024/log/main/directcm720custom.bat" -OutFile "directcm720custom.bat"
+          
+          # This command no longer needs arguments,
+          # because the script can access the environment variables directly.
+          cmd /c directcm720custom.bat
